@@ -1,10 +1,10 @@
 "use client"
+import { LoginButton } from "@/components/auth/login-button";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 
 
 export default function Home() {
-  const router = useRouter()
   return (
   <main className="flex h-screen flex-col items-center justify-center bg-gradient-to-b from-indigo-500 to-blue-500">
       {/* <Button size={"lg"} variant={"outline"}>Click Me</Button> */}
@@ -15,9 +15,10 @@ export default function Home() {
       </h1>
       <p className="text-white text-lg my-2">A simple authentication service</p>
     </div>
-    <div onClick={() => router.push("/auth/login")}>
-    <Button size={"lg"} variant="secondary">Sign in</Button>
-    </div>
+    {/* <div onClick={() => router.push("/auth/login")}> */}
+      <LoginButton><Button size={"lg"} variant="secondary">Sign in</Button></LoginButton>
+    
+    {/* </div> */}
 
   </main>
   );
